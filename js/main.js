@@ -1,3 +1,6 @@
+
+
+
 function newItem() {
 
     // Adds a new item to the list //
@@ -35,6 +38,9 @@ function newItem() {
 
     // Sorting // 
 
-    $('#list').sort(newItem);
+    $('#list').sortable(newItem, {
+        animation: 150,
+        ghostClass: 'blue-background-class'
+    });
 
 }
