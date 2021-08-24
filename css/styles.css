@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400);
 
 body {
@@ -14,7 +21,14 @@ body {
 	margin-top: 40px;
 	background: #00A8E8;
 	border-radius: 5px;
-	box-shadow:
+	-webkit-box-shadow:
+		0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+		0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+		0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12);
+	        box-shadow:
 		0 2.8px 2.2px rgba(0, 0, 0, 0.034),
 		0 6.7px 5.3px rgba(0, 0, 0, 0.048),
 		0 12.5px 10px rgba(0, 0, 0, 0.06),
@@ -67,18 +81,23 @@ ol li {
 	background-color: #eafffd;
 	border: 1px solid #cacaca;
 	border-radius: 4px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+	        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 	cursor: pointer;
+	-webkit-transition: all 0.1s ease-in;
+	-o-transition: all 0.1s ease-in;
 	transition: all 0.1s ease-in;
 }
 
 ol li:hover {
-	box-shadow: none;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
 	color: rgb(97, 96, 96);
 }
 
 ol li:active {
-	box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.25);
+	        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.25);
 }
 
 ol li:nth-child(even) {
