@@ -1,6 +1,3 @@
-
-
-
 function newItem() {
 
     // Adds a new item to the list //
