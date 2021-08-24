@@ -1,28 +1,40 @@
-$("#list").append("<li>List Something</li>"); // You could also write this as a variable
+function newItem() {
 
-   
+    // Adds a new item to the list //
 
-let list = $("#list");
-list.append("<li>Another Example</li>")
+    let listItem = $('<li></li>');
+    let inputValue = $('#input').val();
+    listItem.append(inputValue);
 
-let li = $("<li></li>")
-list.append(li); 
+    if (inputValue === '') {
+        alert('You must write something');
+    } else {
+        $('#list').append(listItem);
+    }
 
+    // // Crossing out the items on the list // 
 
-let input = $("<input type='text' name='ListItem' id='input'/>"); 
-li.append(input); 
+    function crossOut() {
+        listItem.toggleClass('strike');
+    }
 
+    listItem.on('dblclick', crossOut);
 
-$("#input").val('Hello'); // This is to put input the value 
-inputValue = $("#input").val(); // You store the value in a variable here
-li.append(inputValue); // This appends the value to the li list 
+    // Delete Button //
+    let crossOutButton = $('<button class="crossOutButton"></button>');
+    crossOutButton.append("X");
+    listItem.append(crossOutButton);
 
-li.on("click", function() {
-    li.addClass("strike"); 
-   }); 
-   
-// li.addClass("delete"); removes last item 
+    crossOutButton.on('click', deleteListItem);
 
+    // Delete Class (DISPLAY: NONE)
 
+    function deleteListItem() {
+        listItem.addClass("delete");
+    }
 
+    // Sorting // 
 
+    $('#list').sort(newItem);
+
+}
